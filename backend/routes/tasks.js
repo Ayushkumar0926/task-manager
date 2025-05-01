@@ -23,7 +23,7 @@ const authenticate = (req, res, next) => {
   }
 };
 
-// 👉 Create a task
+// Create a task
 router.post('/', authenticate, async (req, res) => {
   const { title, description, priority } = req.body;
 
@@ -44,7 +44,7 @@ router.post('/', authenticate, async (req, res) => {
   }
 });
 
-// 👉 Get all tasks for the user
+// Get all tasks for the user
 router.get('/', authenticate, async (req, res) => {
   try {
     const tasks = await Task.find({ user: req.user }).sort({ createdAt: -1 });
@@ -55,7 +55,7 @@ router.get('/', authenticate, async (req, res) => {
   }
 });
 
-// 👉 Update task status
+// Update task status
 router.put('/:id', authenticate, async (req, res) => {
   try {
     const task = await Task.findOne({ _id: req.params.id, user: req.user });
@@ -75,7 +75,7 @@ router.put('/:id', authenticate, async (req, res) => {
   }
 });
 
-// 👉 Delete a task
+// Delete a task
 router.delete('/:id', authenticate, async (req, res) => {
   try {
     const task = await Task.findOneAndDelete({ _id: req.params.id, user: req.user });
