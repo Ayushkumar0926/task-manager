@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:5000/api/auth";
+const API_URL = "https://task-manager-backend.onrender.com/api/auth";
 
 // REGISTER
 export const registerUser = async (name, email, password) => {
