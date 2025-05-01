@@ -8,8 +8,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const MONGO_URI = "mongodb+srv://burmanayush0926:Edas2qo26V6juSj7@taskmanager.0sw3bdp.mongodb.net/taskManager?retryWrites=true&w=majority&appName=TaskManager";
-
+const MONGO_URI = "mongodb://localhost:27017/taskManager";
 const JWT_SECRET = "taskManager";
 
 app.set('jwt-secret', JWT_SECRET);
